@@ -1,0 +1,62 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: noticias
+    label: Noticias
+    type: file
+    path: data/noticias.json
+    format: json
+    list: true
+
+    fields:
+      - name: title
+        label: Titular
+        type: string
+        required: true
+
+      - name: summary
+        label: Bajada
+        type: text
+
+      - name: category
+        label: Categoría
+        type: select
+        options:
+          values:
+            - Actualidad
+            - Cañete
+            - Comunidad
+            - Deportes
+            - Política
+            - Seguridad
+            - Comercio
+            - Cultura
+            - Turismo
+            - Provincia de Arauco
+
+      - name: date
+        label: Fecha
+        type: date
+        required: true
+
+      - name: author
+        label: Autor
+        type: string
+
+      - name: image
+        label: Fotografía principal
+        type: image
+
+      - name: body
+        label: Noticia
+        type: rich-text
+
+      - name: featured
+        label: Noticia destacada
+        type: boolean
+
+settings:
+  content:
+    merge: true
